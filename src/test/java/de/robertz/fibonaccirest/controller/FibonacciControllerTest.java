@@ -36,4 +36,35 @@ class FibonacciControllerTest {
         }
         System.out.println("Execution time: " + totalTime);
     }
+
+    @Test
+    void excecutionSpeedBestCaseForCache() {
+        long totalTime = 0;
+        for (int i = 0; i < ITERATION_AMOUNT; i++) {
+            int n = 70;
+            long start = System.currentTimeMillis();
+            fibonacciController.handleFibonacci(n);
+            long dif = System.currentTimeMillis() - start;
+            totalTime += dif;
+        }
+        System.out.println("Execution time: " + totalTime);
+    }
+
+    @Test
+    void executionSpeedGoodCaseForCache() {
+        float chance = 0.9f;
+        long totalTime = 0;
+
+        for (int i = 0; i < ITERATION_AMOUNT; i++) {
+            int n = 70;
+            if (rnd.nextFloat() < chance) {
+                n = rnd.nextInt(70);
+            }
+            long start = System.currentTimeMillis();
+            fibonacciController.handleFibonacci(n);
+            long dif = System.currentTimeMillis() - start;
+            totalTime += dif;
+        }
+        System.out.println("Execution time: " + totalTime);
+    }
 }
