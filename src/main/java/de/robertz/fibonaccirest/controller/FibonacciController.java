@@ -14,7 +14,7 @@ public class FibonacciController {
 
     /**
      * This part was just for experimenting
-     * Using the cache seems to be always slower. Empirically tested.
+     * Using the cache is only faster if the requested fibonacci number is always the same. Empirically tested.
      */
     private static final boolean USE_CACHE = true;
     //a threadsafe chachemap since RestController in spring is multithreaded
