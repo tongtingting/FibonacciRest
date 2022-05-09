@@ -57,7 +57,7 @@ class FibonacciControllerTest {
 
         for (int i = 0; i < ITERATION_AMOUNT; i++) {
             int n = 70;
-            if (rnd.nextFloat() < chance) {
+            if (rnd.nextFloat() > chance) {
                 n = rnd.nextInt(70);
             }
             long start = System.currentTimeMillis();
