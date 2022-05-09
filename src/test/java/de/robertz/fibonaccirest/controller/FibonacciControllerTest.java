@@ -38,7 +38,7 @@ class FibonacciControllerTest {
     }
 
     @Test
-    void excecutionSpeedBestCaseForCache() {
+    void executionSpeedBestCaseForCache() {
         long totalTime = 0;
         for (int i = 0; i < ITERATION_AMOUNT; i++) {
             int n = 70;
